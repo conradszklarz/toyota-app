@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   namespace :api do
-    get '/display_all_cars' => 'cars#all_cars'
-    get '/display_first_car' => 'cars#first_car'
-    get '/display_second_car' => 'cars#second_car'
+    get '/cars' => 'cars#index'
+    get '/cars/:id' => 'cars#show'
+    post '/cars' => 'cars#create'
+    patch 'cars/:id' => 'cars#update'
+    delete '/cars/:id' => 'cars#destroy'
   end
 end
